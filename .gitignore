@@ -137,3 +137,11 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Other
+node_modules/
+*.opus_hex
+*.pcm_raw
+*.wav
+voiceapi.json
+conv.txt
