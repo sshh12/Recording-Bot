@@ -1,5 +1,6 @@
-import os
+from itertools import combinations
 import wave
+import os
 
 datapath = 'voicedata'
 conversationfn = 'conv.txt'
@@ -37,18 +38,16 @@ def main():
     recordings = [Recording(fn) for fn in os.listdir(datapath) if "!" in fn]
 
     with open(conversationfn, 'w') as conv:
+        
+        for a, b in combinations(recordings, 2):
 
-        for a in recordings:
+            if a == b or a.userid == b.userid or a.stop > b.start:
+                continue
 
-            for b in recordings:
+            delay = b.start - a.stop # Time between prompt end and response start
 
-                if a == b or a.userid == b.userid or a.stop <= b.start:
-                    continue
-
-                delay = a.stop - b.start # Time between prompt end and responce start
-
-                if delay <= response_delay:
-                    conv.write("#".join([a.text, b.fn]) + "\n") # Writes prompt and responce filename for every valid conversation
+            if delay <= response_delay:
+                conv.write("#".join([a.text, b.fn]) + "\n") # Writes prompt and response filename for every valid conversation
             
 
 if __name__ == "__main__":
