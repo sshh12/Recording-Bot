@@ -2,11 +2,11 @@ from recordingbot import Bot
 import os
 
 
-conversationfn = 'conv.txt'
+conversationfn = 'conv.txt' # create this file on first run
 converations = {}
 
 
-with open(conversationfn, 'r') as conv:
+with open(conversationfn, 'r') as conv: # run create_conversation_log.py to generate this
 
     for line in conv.read().split("\n"):
 
