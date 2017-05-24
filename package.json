@@ -1,0 +1,23 @@
+{
+  "name": "Recording Bot",
+  "version": "1.0.0",
+  "description": "A bot built to record and transcribe audio fragments from Discord.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sshh12/Recording-Bot/"
+  },
+  "author": "shrivu1122",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sshh12/Recording-Bot/issues"
+  },
+  "homepage": "https://github.com/sshh12/Recording-Bot/tree/master#recording-bot",
+  "dependencies": {
+    "discord.js": "github:hydrabolt/discord.js",
+    "node-opus": "^0.2.4"
+  }
+}
