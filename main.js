@@ -10,6 +10,7 @@ const rate = 48000;
 const frame_size = 1920;
 const channels = 2;
 const pythonapp = 'bot_conversation.py'
+const token = '';
 
 const child = require('child_process');
 
@@ -175,4 +176,4 @@ let playFile = (member, filename) => {
   disp.on("end", (end) => {});
 }
 
-client.login("Mjc1MzE5Mjk4NzI0MDY5Mzc2.C2-6sw.LghWk4gz48F218r2531XCZHGXEE").catch(console.error);
+client.login(token).catch(console.error);
